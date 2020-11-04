@@ -11,11 +11,26 @@ function App(){
     {clubnaam: 'RSCA Anderlecht', clubimage: foto2}
   ]);
 
+  //nieuwe pagina aanmake
+  const [page, setPage] = useState(null)
+  function setNextPage(clubnaam) {
+    setNextPage(clubnaam)
+  }
+
   return (
     <div>
-      {clubs.map(club =>(
-        <Myfrontpage clubnaam={club.clubnaam} clubimage={club.clubimage} />
-      ))}
+      {!page && (<div>
+        {clubs.map(club =>(
+          <Myfrontpage selectFunction={e => setNextPage(clubs.clubnaam)} key={clubs.clubnaam}
+           clubnaam={club.clubnaam} clubimage={club.clubimage} />
+      ))} 
+      </div>)}
+
+      {page && (<div>
+          <h1 >ge zijt er</h1>
+      </div>)}
+
+      
     </div>
   )
 }
