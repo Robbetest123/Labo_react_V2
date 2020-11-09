@@ -7,7 +7,7 @@ function Myfrontpage(props) {
             <div className="container">
                 <h1>{props.clubnaam}</h1>
             </div>
-            <img src={props.clubimage} onClick={props.selectFunction}></img>
+            <img src={props.clubimage} onClick={props.selectFunction} ></img>
         </div>
     )
 }
